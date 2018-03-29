@@ -1,5 +1,5 @@
 {
-  "name": "storybook-styled-components",
+  "name": "@couto/storybook-styled-components",
   "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
