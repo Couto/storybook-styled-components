@@ -29,11 +29,12 @@ export default class WrapStyledComponentsThemePicker extends React.Component {
   }
 
   render() {
-    const {themes, children} = this.props;
-    const {theme} = this.state;
+    const {themes, context, storyFn} = this.props;
+    const {theme} = this.state || Object.keys(this.themes)[0];
+    const storyElement = storyFn(context);
 
     return themes[theme]
-    ? <ThemeProvider theme={themes[theme]}>{this.props.children}</ThemeProvider>
-    : this.props.children
+    ? <ThemeProvider theme={themes[theme]}>{storyElement}</ThemeProvider>
+    : storyElement
   }
 }

@@ -8,8 +8,9 @@ const wrapperTheme = (themes) => {
     <WrapStyledComponentsThemePicker
       themes={themes}
       channel={channel}
-      >{storyFn(context)}
-    </WrapStyledComponentsThemePicker>
+      storyFn={storyFn}
+      context={context}
+    />
   );
 }
 

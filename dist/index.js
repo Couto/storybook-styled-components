@@ -21,14 +21,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const wrapperTheme = themes => {
   const channel = _addons2.default.getChannel();
-  return (storyFn, context) => _react2.default.createElement(
-    _WrapStory2.default,
-    {
-      themes: themes,
-      channel: channel
-    },
-    storyFn(context)
-  );
+  return (storyFn, context) => _react2.default.createElement(_WrapStory2.default, {
+    themes: themes,
+    channel: channel,
+    storyFn: storyFn,
+    context: context
+  });
 };
 
 function withThemes(themes, defaultTheme) {
