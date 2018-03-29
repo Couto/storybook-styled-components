@@ -40,12 +40,13 @@ class WrapStyledComponentsThemePicker extends _react2.default.Component {
 
   render() {
     const { themes, context, storyFn } = this.props;
-    const { theme } = this.state || Object.keys(this.themes)[0];
+    const { theme } = this.state;
     const storyElement = storyFn(context);
+    const currentTheme = themes[theme || Object.keys(themes)[0]];
 
-    return themes[theme] ? _react2.default.createElement(
+    return currentTheme ? _react2.default.createElement(
       _styledComponents.ThemeProvider,
-      { theme: themes[theme] },
+      { theme: currentTheme },
       storyElement
     ) : storyElement;
   }
